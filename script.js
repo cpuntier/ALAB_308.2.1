@@ -1,5 +1,5 @@
 const PI = 3.1415;
-const area = PI * 5 * 5; 
+const area = PI * 5 * 5;
 const plantSpace = 0.8;
 
 let numPlants = 20;
@@ -22,35 +22,35 @@ numPlants = numPlants * 2; // after 1 week
 plantArea = numPlants * plantSpace;
 
 
-if (plantArea > 0.8*area){
+if (plantArea > 0.8 * area) {
     console.log("Need to Prune");
-}else if (0.5*area<= plantArea <= 0.8*area){
+} else if (0.5 * area <= plantArea <= 0.8 * area) {
     console.log("Need to be monitored")
-}else{
+} else {
     console.log("Room for more. Plant.")
 }
 
-numPlants = numPlants *2; //after 2 weeks
+numPlants = numPlants * 2; //after 2 weeks
 plantArea = numPlants * plantSpace;
 
-if (plantArea > 0.8*area){
+if (plantArea > 0.8 * area) {
     console.log("Need to Prune");
-}else if (0.5*area<= plantArea <= 0.8*area){
+} else if (0.5 * area <= plantArea <= 0.8 * area) {
     console.log("Need to be monitored");
-}else{
+} else {
     console.log("Room for more. Plant.");
-} 
+}
 
 numPlants = numPlants * 2; // after 3 weeks
 plantArea = numPlants * plantSpace;
 
-if (plantArea > 0.8*area){
+if (plantArea > 0.8 * area) {
     console.log("Need to Prune");
-}else if (0.5*area<= plantArea <= 0.8*area){
+} else if (0.5 * area <= plantArea <= 0.8 * area) {
     console.log("Need to be monitored");
-}else{
+} else {
     console.log("Room for more. Plant.");
-} 
+}
 
 //plants need to be pruned after the 2nd and 3rd weeks
 
@@ -68,11 +68,30 @@ numPlants = numPlants * 2;
 numPlants = numPlants * 2;
 numPlants = numPlants * 2;//10 weeks
 
-plantArea = numPlants * plantSpace;
-console.log(numPlants , plantArea);
+plantAreaMax = numPlants * plantSpace;
+console.log(numPlants, plantAreaMax);
 
-const maxRadius = Math.sqrt(plantArea/(PI));
+const maxRadius = Math.sqrt(plantAreaMax / (PI));
 console.log(maxRadius)
 
 //the radius of the new garden assuming they start with 100 plants and no pruning for 10 weeks is 161.5 meters
 
+numPlants = 100;
+plantArea = plantSpace * numPlants;
+
+try {
+    if (plantArea > area) {
+        throw "Error - Plants exceed area of garden"
+    }
+} catch (error) {
+    console.log(error)
+
+}
+
+if (plantArea > 0.8 * area) {
+    console.log("Need to Prune");
+} else if (0.5 * area <= plantArea <= 0.8 * area) {
+    console.log("Need to be monitored")
+} else {
+    console.log("Room for more. Plant.")
+}
